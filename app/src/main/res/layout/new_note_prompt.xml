@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/newNotePromptLinearLayoutLayoutRoot"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/newNotePromptTextViewNewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Note Name: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/newNotePromptEditTextNewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" >
+
+        <requestFocus />
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/newNotePromptTextViewNewPasscode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Passphrase: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/newNotePromptEditTextNewPasscode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint= "Enter up to 32 characters..."/>
+
+    <TextView
+        android:id="@+id/newNotePromptTextViewConfirmPasscode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm Passphrase: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/newNotePromptEditTextConfirmPasscode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword" />
+
+</LinearLayout>

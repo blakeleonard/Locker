@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="net.leonardlabs.locker.BaseActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/noteViewToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            <Button
+                android:id="@+id/noteViewButtonSave"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="wrap_content"
+                android:background="@drawable/disk"
+                android:layout_gravity="right" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_height="match_parent" >
+
+        <!-- Dummy item to prevent EditText from receiving focus on startup -->
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="0px"
+            android:layout_height="0px"/>
+
+        <view xmlns:android="http://schemas.android.com/apk/res/android"
+            class="net.leonardlabs.locker.BaseActivity$LinedEditText"
+            android:id="@+id/noteViewEditTextNoteBody"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_marginBottom="0dp"
+            android:paddingLeft="@dimen/main_edittext_horizontal_padding"
+            android:paddingRight="@dimen/main_edittext_horizontal_padding"
+            android:paddingTop="@dimen/main_edittext_top_padding"
+            android:paddingBottom="@dimen/main_edittext_bottom_padding"
+            android:inputType="textMultiLine"
+            android:fontFamily="monospace"
+            android:typeface="monospace"
+            android:lines="@integer/body_lines"
+            android:maxLines="@integer/body_lines"
+            android:gravity="top|left"
+            android:textSize="@dimen/body_text_size"
+            android:background="@color/colorBlack"
+            android:textColor="@color/colorGreen2"
+            android:nextFocusUp="@id/noteViewEditTextNoteBody"
+            android:nextFocusLeft="@id/noteViewEditTextNoteBody"
+            android:saveEnabled="false"/>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

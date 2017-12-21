@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BaseActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize" >
+
+        <TextView
+            android:id="@+id/mainTextViewEncryptedBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="@dimen/main_edittext_horizontal_padding"
+            android:paddingRight="@dimen/main_edittext_horizontal_padding"
+            android:paddingTop="@dimen/main_edittext_top_padding"
+            android:paddingBottom="@dimen/main_edittext_bottom_padding"
+            android:fontFamily="monospace"
+            android:typeface="monospace"
+            android:lines="@integer/body_lines"
+            android:gravity="top|left"
+            android:textSize="@dimen/body_text_size"
+            android:background="@color/colorBlack"
+            android:textColor="@color/colorGreen2"/>
+
+        <ListView
+            android:id="@+id/mainNoteListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/colorWhite"
+            android:gravity="top"
+            android:layout_marginBottom="@dimen/main_list_margin"
+            android:layout_marginTop="@dimen/main_list_margin"
+            android:layout_marginLeft="@dimen/main_list_margin"
+            android:layout_marginRight="@dimen/main_list_margin" />
+
+        <TextView
+            android:id="@+id/mainTextViewNoNotesMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="@dimen/main_list_margin"
+            android:layout_marginTop="@dimen/main_list_margin"
+            android:layout_marginLeft="@dimen/main_list_margin"
+            android:layout_marginRight="@dimen/main_list_margin"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="26dp"
+            android:text="\n\n\nNo Notes."
+            android:background="@color/colorWhite"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
