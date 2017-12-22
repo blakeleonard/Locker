@@ -612,7 +612,7 @@ public class BaseActivity extends AppCompatActivity {
                                 changePasscodePromptEditTextConfirmPasscode.setText("");
 
                                 // If a passcode was entered, isn't greater than maximum allowed size, and is successfully confirmed, then start background thread
-                                if (newPasscodeLength > 0) {
+                                if ( ( newPasscodeLength > 0 ) || ( confirmPasscodeLength > 0 ) ) {
 
                                     if (newPasscode.length <= maxPasscodeSize) {
 
@@ -637,7 +637,7 @@ public class BaseActivity extends AppCompatActivity {
                                 else {
 
                                     // Nothing was entered.
-                                    Toast.makeText(getApplicationContext(), "Nothing was Entered!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Passphrase is Blank!", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         })

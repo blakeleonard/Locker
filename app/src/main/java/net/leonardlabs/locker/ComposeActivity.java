@@ -400,7 +400,7 @@ public class ComposeActivity extends BaseActivity {
                                                 });
 
                                                 // If a passcode was entered, is less than the maximum size, & matches confirmation passcode, then make note encrypted
-                                                if ( (newPasscodeLength > 0) & (confirmPasscodeLength > 0) ) {
+                                                if ( (newPasscodeLength > 0) || (confirmPasscodeLength > 0) ) {
 
                                                     if (newPasscode.length <= maxPasscodeSize) {
 
@@ -535,8 +535,21 @@ public class ComposeActivity extends BaseActivity {
                                                 // Note name already exists
 
                                                 // Overwrite EditText Fields for security
-                                                newNotePromptEditTextNewPasscode.setText("");
-                                                newNotePromptEditTextConfirmPasscode.setText("");
+                                                newNotePromptEditTextNewPasscode.post(new Runnable() {
+
+                                                    public void run() {
+
+                                                        newNotePromptEditTextNewPasscode.setText("");
+                                                    }
+                                                });
+
+                                                newNotePromptEditTextConfirmPasscode.post(new Runnable() {
+
+                                                    public void run() {
+
+                                                        newNotePromptEditTextConfirmPasscode.setText("");
+                                                    }
+                                                });
 
                                                 databaseUpdateHandler.sendEmptyMessage(NAME_EXISTS);
                                             }

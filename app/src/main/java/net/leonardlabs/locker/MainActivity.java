@@ -594,6 +594,16 @@ public class MainActivity extends BaseActivity {
                     // Passcodes don't match
 
                     databaseUpdateHandler.sendEmptyMessage(INCORRECT_PASSCODE);
+
+                    // Check if Note is Locked
+                    dbInUse = true;
+                    boolean isNoteLocked = myNoteDb.isNoteLocked(rowId);
+                    dbInUse = false;
+
+                    if (isNoteLocked) {
+
+                        databaseUpdateHandler.sendEmptyMessage(NOTE_LOCKED);
+                    }
                 }
                 else if (checkPasscodeResult == 1) {
 
